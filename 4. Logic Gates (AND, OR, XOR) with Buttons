@@ -1,0 +1,35 @@
+int button1 = 2;
+
+int button2 = 3;
+
+int led = 13;
+
+void setup() {
+
+ pinMode(button1, INPUT);
+
+ pinMode(button2, INPUT);
+
+ pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+
+ int a = digitalRead(button1);
+
+ int b = digitalRead(button2);
+
+ // XOR logic shown
+
+ if (a != b) {
+
+ digitalWrite(led, HIGH);
+
+ } else {
+
+ digitalWrite(led, LOW);
+
+ }
+
+}
