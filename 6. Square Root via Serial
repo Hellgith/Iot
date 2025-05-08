@@ -1,0 +1,39 @@
+void setup() {
+
+ Serial.begin(9600);
+
+ Serial.println("Enter a number to find its square root:");
+
+}
+
+void loop() {
+
+ if (Serial.available() > 0) {
+
+ float number = Serial.parseFloat();
+
+ if (number >= 0) {
+
+ float result = sqrt(number);
+
+ Serial.print("The square root of ");
+
+ Serial.print(number);
+
+ Serial.print(" is ");
+
+ Serial.println(result);
+
+ } else {
+
+ Serial.println("Please enter a non-negative number.");
+
+ }
+
+ Serial.println("Enter another number:");
+
+ delay(100);
+
+ }
+
+}
