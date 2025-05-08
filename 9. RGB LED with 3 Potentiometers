@@ -1,0 +1,41 @@
+const int redPin = 9;
+
+const int greenPin = 10;
+
+const int bluePin = 11;
+
+const int potR = A0;
+
+const int potG = A1;
+
+const int potB = A2;
+
+void setup() {
+
+ pinMode(redPin, OUTPUT);
+
+ pinMode(greenPin, OUTPUT);
+
+ pinMode(bluePin, OUTPUT);
+
+ Serial.begin(9600);
+
+}
+
+void loop() {
+
+ int redVal = analogRead(potR);
+
+ int greenVal = analogRead(potG);
+
+ int blueVal = analogRead(potB);
+
+ analogWrite(redPin, map(redVal, 0, 1023, 0, 255));
+
+ analogWrite(greenPin, map(greenVal, 0, 1023, 0, 255));
+
+ analogWrite(bluePin, map(blueVal, 0, 1023, 0, 255));
+
+ delay(50);
+
+}
