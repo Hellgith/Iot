@@ -1,0 +1,39 @@
+void setup() {
+
+ Serial.begin(9600);
+
+ Serial.println("Enter a number to find its cube root:");
+
+}
+
+void loop() {
+
+ if (Serial.available() > 0) {
+
+ float number = Serial.parseFloat();
+
+ if (number >= 0) {
+
+ float cubeRoot = pow(number, 1.0/3.0);
+
+ Serial.print("The cube root of ");
+
+ Serial.print(number);
+
+ Serial.print(" is ");
+
+ Serial.println(cubeRoot);
+
+ } else {
+
+ Serial.println("Please enter a non-negative number.");
+
+ }
+
+ Serial.println("Enter another number:");
+
+ delay(100);
+
+ }
+
+}
